@@ -1,0 +1,18 @@
+<button id="capturebutton" (click)="capture()">Take photo</button>
+<button id="startbutton" (click)="startCapture()">Start capture</button>
+<button id="stopbutton" (click)="stopCapture()">Stop capture</button>
+<button id="nextbutton" (click)="startNextCamera()">Capture next camera</button>
+<div><label>{{captureDetails}}</label></div>
+
+<div id="capture">
+    <div class="camera">
+        <video id="video" #video autoplay playsinline>Video stream not available.</video>
+    </div>
+
+    <canvas id="canvas" #canvas hidden=true></canvas>
+    <ul>
+        <li *ngFor="let capture of captures.slice().reverse()">
+            <img src="{{ capture }}" width="320" />
+        </li>
+    </ul>
+</div>
