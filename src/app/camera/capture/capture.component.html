@@ -6,10 +6,12 @@
 
 <div id="capture">
     <div class="camera">
+        <!-- playinline attribute needed for iOS-->
         <video id="video" #video autoplay playsinline>Video stream not available.</video>
     </div>
 
     <canvas id="canvas" #canvas hidden=true></canvas>
+
     <ul>
         <li *ngFor="let capture of captures.slice().reverse()">
             <img src="{{ capture }}" width="320" />
